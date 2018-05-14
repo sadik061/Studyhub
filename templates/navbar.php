@@ -30,7 +30,6 @@ error_reporting(1);
                 echo '<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" style="margin-left: 19px;" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    <a class="dropdown-item" href="../Study/dashboard.php">Dashboard</a>
                     <a class="dropdown-item" href="">Notifications</a>
                     <a class="dropdown-item" href="../Study/Classromms.php">Classrooms</a>
                     <a class="dropdown-item" href="../study/connection/logout.php">Logout</a>

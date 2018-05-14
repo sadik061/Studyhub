@@ -18,17 +18,60 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <form>
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-2 col-form-label">Classroom id</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" id="inputPassword" placeholder="">
+                    <form role="form" action="Classromms.php" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Classroom ID" name="id" type="text" autofocus>
                             </div>
-                            <button type="submit" class="btn btn-success mb-2" style="float:  right;">Search</button>
-                        </div>
+                            <button type="Submit" class="btn btn-success btn-outline">Search</button>
+                        </fieldset>
                     </form>
 
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Search Result
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>Classroom id</th>
+                                <th>name</th>
+                                <th>department</th>
+                                <th>subject</th>
+                                <th>Action</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $dbname = "study";
+                            error_reporting(1);
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                            }
+                            $sql = "SELECT * FROM classroom where id=".$_POST["id"];
+                            $result = mysqli_query($conn, $sql);
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                                    echo '<td class="odd gradeX">'.$row["id"].'</td><td>'.$row["name"].'</td><td>'.$row["department"].'</td></td><td>'.$row["subject"].'</td><td class="center"><a href="enroll.php?classroomid='.$row["id"].'" class="btn btn-outline btn-success" role="button" aria-pressed="true">Enroll</a></td></tr>';
+                                }
+                            }
+                            $conn->close();
+
+                            ?>
+                            </tbody>
+                        </table>
+                        <!-- /.table-responsive -->
+
+                    </div>
+                    <!-- /.panel-body -->
                 <!-- /.panel-body -->
             </div>
             <div class="panel panel-default">

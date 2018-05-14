@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    DataTables Advanced Tables
+                    Details
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -22,43 +22,38 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>ID</th>
+                            <th>Email</th>
                             <th>Questions</th>
                             <th>Solved</th>
                             <th>Unsolved</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="odd gradeX">
-                            <td>Naurin Azad</td>
-                            <td>011151313</td>
+                        <?php
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $dbname = "study";
+                            error_reporting(1);
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                            }
+                            $sql = "SELECT * FROM classmember NATURAL JOIN user where classid=".$_SESSION["classroomid"];
+                            $result = mysqli_query($conn, $sql);
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                                  echo  '<tr class="odd gradeX">
+                            <td>'.$row["name"].'</td>
+                            <td>'.$row["email"].'</td>
                             <td>10</td>
                             <td class="center">8</td>
                             <td class="center">2</td>
-                        </tr>
-                        <tr class="even gradeC">
-                            <td>Anika Hossain Oishy</td>
-                            <td>011151134</td>
-                            <td>15</td>
-                            <td class="center">10</td>
-                            <td class="center">5</td>
-                        </tr>
-                        <tr class="odd gradeA">
-                            <td>Hasibur Rahman Shovon</td>
-                            <td>011151122</td>
-                            <td>20</td>
-                            <td class="center">18</td>
-                            <td class="center">2</td>
-                        </tr>
-                        <tr class="even gradeA">
-                            <td>Shahinur Islam</td>
-                            <td>011151148</td>
-                            <td>10</td>
-                            <td class="center">10</td>
-                            <td class="center">0</td>
-                        </tr>
+                        </tr>';
+                                }
 
-
+                                }
+                                ?>
 
                         </tbody>
                     </table>

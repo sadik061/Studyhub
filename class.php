@@ -12,10 +12,30 @@
     </div>
     <!-- /.row -->
     <div class="row">
-        <div class="col-lg-12">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "study";
+        error_reporting(1);
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT * FROM classmember where classid=".$_SESSION["classroomid"]." AND id=".$_SESSION["userid"];
+        //echo $sql;
+        $result = mysqli_query($conn, $sql);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $role = $row["typee"];
+        }
+        $conn->close();
+        if($role=="Moderator")
+        {
+        echo '<div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Ask a question
+                    Add a class
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -36,11 +56,14 @@
                 </div>
                 <!-- /.panel-body -->
             </div>
-        </div>
+        </div>';
+        }
+        ?>
+
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    DataTables Advanced Tables
+                    All classes
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
