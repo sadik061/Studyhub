@@ -1,5 +1,8 @@
 <?php include 'templates/header.php';?>
 <body>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">

@@ -1,4 +1,4 @@
-<nav class="col-md-2 d-none d-md-block bg-light sidebar" style="    padding-top:  2%;">
+<nav class="col-md-2 d-none d-md-block bg-light sidebar" style="margin-top: 67px;position:  fixed;">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">

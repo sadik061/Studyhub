@@ -2,8 +2,7 @@
 <body>
 <?php include 'templates/navbar.php';?>
 <?php include 'templates/sidebar.php';?>
-
-<div id="page-wrapper" style="padding-top: 2%;">
+<div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Students info</h1>
@@ -19,7 +18,7 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <table width="100%" class="table" >
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -74,4 +73,5 @@
     </div>
 </body>
 <?php include 'templates/footer.php';?>
+<?php include 'templates/classroomcreate.php';?>
 </html>

@@ -1,7 +1,7 @@
 <?php include 'templates/header.php';?>
     <body>
     <?php include 'templates/navbar.php';?>
-    <div style="background-color: #5FB27B; padding-top: 14%;padding-bottom: 14%;">
+    <div style="background-color: #5FB27B; padding-top: 7%;padding-bottom: 21%;">
         <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center cover" style="background-color:  #5FB27B;">
             <div class="col-md-12 p-lg-12 mx-auto my-12">
                 <h1 class="display-4 font-weight-normal" style="color:  white;">STUDY HUB</h1>
@@ -13,6 +13,10 @@
         </div>
 
     </div>
+
+    <?php include 'templates/loginpopup.php';?>
+    <?php include 'templates/signin.php';?>
+    <?php include 'templates/classroomcreate.php';?>
 
     </body>
 <?php include 'templates/footer.php';?>

@@ -1,10 +1,11 @@
+
 <?php include 'templates/header.php';?>
     <body>
 <?php include 'templates/navbar.php';?>
 <?php include 'templates/sidebar.php';?>
 
-<div id="page-wrapper" style="padding-top: 5%;">
-    <div class="row">
+<div id="page-wrapper">
+    <div class="row" style="padding-top:  2%;">
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -98,4 +99,5 @@
 
     </body>
 <?php include 'templates/footer.php';?>
+<?php include 'templates/classroomcreate.php';?>
 </html>
